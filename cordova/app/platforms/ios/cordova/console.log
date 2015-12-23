@@ -1,0 +1,30 @@
+2015-05-20 21:16:33.093 rendezvous[12982:934180] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/samuel/Library/Developer/CoreSimulator/Devices/5A293278-62A1-44AB-A353-3675132B192D/data/Containers/Data/Application/A01CBAF5-A760-4033-B42F-FC0CEEF07381/Library/Cookies/Cookies.binarycookies
+2015-05-20 21:16:33.344 rendezvous[12982:934180] Apache Cordova native platform version 3.8.0 is starting.
+2015-05-20 21:16:33.344 rendezvous[12982:934180] Multi-tasking -> Device: YES, App: YES
+2015-05-20 21:16:33.358 rendezvous[12982:934180] Unlimited access to network resources
+2015-05-20 21:16:33.367 rendezvous[12982:934180] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-05-20 21:16:34.098 rendezvous[12982:934180] Resetting plugins due to page load.
+2015-05-20 21:16:34.228 rendezvous[12982:934180] Finished load of: file:///Users/samuel/Library/Developer/CoreSimulator/Devices/5A293278-62A1-44AB-A353-3675132B192D/data/Containers/Bundle/Application/A0B9CCB4-A967-4876-A4D1-D5579E250F62/rendezvous.app/www/index.html
+2015-06-14 17:49:52.728 rendezvous[10546:283152] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/samuel/Library/Developer/CoreSimulator/Devices/5A293278-62A1-44AB-A353-3675132B192D/data/Containers/Data/Application/FBAFE6E6-4EAE-4DFD-A849-E422E5786678/Library/Cookies/Cookies.binarycookies
+2015-06-14 17:49:53.417 rendezvous[10546:283152] Apache Cordova native platform version 3.8.0 is starting.
+2015-06-14 17:49:53.418 rendezvous[10546:283152] Multi-tasking -> Device: YES, App: YES
+2015-06-14 17:49:53.459 rendezvous[10546:283152] Unlimited access to network resources
+2015-06-14 17:49:53.488 rendezvous[10546:283152] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-06-14 17:49:55.040 rendezvous[10546:283152] Resetting plugins due to page load.
+2015-06-14 17:49:57.866 rendezvous[10546:283152] THREAD WARNING: ['Geolocation'] took '11.584229' ms. Plugin should use a background thread.
+2015-06-14 17:49:58.107 rendezvous[10546:283152] Finished load of: file:///Users/samuel/Library/Developer/CoreSimulator/Devices/5A293278-62A1-44AB-A353-3675132B192D/data/Containers/Bundle/Application/C6B8C00F-1265-4D75-B884-7538F640E404/rendezvous.app/www/index.html
+2015-06-14 17:50:00.346 rendezvous[10546:283152] locationManager::didFailWithError (null)

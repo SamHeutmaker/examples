@@ -1,0 +1,287 @@
+  <!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        
+        <link rel="stylesheet" type="text/css" href="index.css" />
+        <link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" />
+ 
+        <title>BITE: Local Food Listings</title>
+
+          <!--Angular-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+         <!--Angular-->
+        <script src="js/lodash.js"></script>
+         <!--Angular-->
+        <script src="js/angular-google-maps.js"></script>
+         <!--Angular-->
+        <script src="js/simple-logger.js"></script>
+    </head>
+
+
+    <body ng-app="biteLA">
+          
+
+            <div id="login-page" data-role="page">
+                <table border="1" id="table1">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">Login</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>Username</td>
+                                    <td><input type="text" name="username" value="jsmith" size="25" id="login-username-input"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Password</td>
+                                    <td><input type="password" name="password" value="hotdog" size="25" id="login-password-input"/></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <button id="register-page-button">Register</button>
+                                    </td>
+                                    <td>
+                                       <button id="login-button">Login</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+            </div>  
+
+
+
+
+            <div id="registration-page" data-role="page">
+                 <div id="newuser" >
+                     <form method="POST">
+                        <table border="1" id="table1">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">New User</td>
+                                </tr>
+                                <tr>
+                                    <td>First Name</td>
+                                    <td><input type="text" name="firstname" value="joe" size="25"  id="firstname"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Last Name</td>
+                                    <td><input type="text" name="lastname" value="smith" size="25" id="lastname"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Username</td>
+                                    <td><input type="text" name="username" value="jsmith" size="25" id="username"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Password</td>
+                                    <td><input type="password" name="password" value="hotdog" size="25" id="password"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Confirm Password</td>
+                                    <td><input type="password" name="password" value="hotdog" size="25" id="password2"/></td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                       <button id="register-button">Register</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+             </div>
+
+        
+
+            <div id="app" data-role="page" ng-controller="MainController">
+                    
+                    <div id="panel" data-role="panel" data-display="reveal">  
+                        <div id="content-panel" data-role="content">
+                        
+                            <div id="logout-button">Logout </div>
+                        </div>
+                    </div>
+
+                    <div id="content-map" data-role="content">
+
+
+
+                        <div id="panel-open-button"> &nbsp; </div>
+                        <div id="search-button"> &nbsp; </div>
+                         
+
+                     
+                        <div id="map-canvas"></div>
+
+                    
+
+
+                         <div id="search-overlay">
+                            
+                        </div>
+
+                        <div id="search-input-container" class="search-overlay-button">
+                                <input id="search-input" placeholder="What are you hungry for?" ng-keyup="keyUp()">
+                        </div>
+
+                        <button class="search-overlay-button" id="overlay-close-button" value="List">Result Map</button>
+                        <button class="search-overlay-button" id="list-page-button" value="List">Result List</button>
+
+                        <div id="content-list">
+                            <div id="list-page-back-button"> &nbsp; </div>
+
+                            <div id="results-container">
+                                <div id="results-inner">
+                                    <div ng-repeat="result in searchResults">
+                                        <app-info info="result"></app-info>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div> 
+
+
+            </div>
+
+
+
+        
+
+
+
+    
+      
+       
+    </body>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery.color.js"></script>
+        <script type="text/javascript" src="js/jquery/easing.js"></script>
+        <script type="text/javascript" src="js/jquery/swipeupdown.js"></script>
+
+       <!--Modules-->
+       <script src="angular/app.js"></script>
+
+       <!--Controllers-->
+       <script src="angular/controllers/MainController.js"></script>
+
+       <!--Directives-->
+       <script src="angular/directives/appInfo.js"></script>
+
+        <!--Login functionality -->
+        <script type="text/javascript" src="js/functions/login.js"></script>
+
+
+        <!--Google MAPS API V3 -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBf7Ht2-Kkt7M1ORDcm8iZ1S8lmnNJIhi8&libraries=places"></script>
+
+
+</html>
+
+<script>// Event Listeners
+
+$( document ).ready(function() {
+      $.mobile.changePage( "#app", { transition: "slide", changeHash: false });
+});
+
+</script>
+
+<script>
+
+//////////////////////////BUTTON CLICKS MAIN PAGE
+
+$searchMenuOpen = false;
+
+//Open Search Menu
+$("#search-button").click(function(){
+    if($searchMenuOpen == false){
+        $("#search-overlay").fadeIn(200);
+        $(".search-overlay-button").fadeIn(200);
+        $("#panel-open-button").fadeOut(200);
+        $searchMenuOpen = true;
+    } else if($searchMenuOpen == true) {
+        $("#search-overlay").fadeOut(200);
+        $(".search-overlay-button").fadeOut(200);
+        $("#panel-open-button").fadeIn(200);
+        $searchMenuOpen = false;
+    }
+});
+//View Search Result Map
+$("#overlay-close-button").click(function(){
+    $("#search-overlay").fadeOut(200);
+    $(".search-overlay-button").fadeOut(200);
+    $("#panel-open-button").fadeIn(200);
+});
+//View Search Result List
+$("#list-page-button").click(function(){
+    $("#content-list").animate({left: "0px"}, 250);
+});
+//Exit Search Result List
+$("#list-page-back-button").click(function(){
+    $("#content-list").animate({left: "100%"}, 250);
+});
+//Open Panel
+$("#panel-open-button").click(function(){
+    $( "#panel" ).panel( "open" );
+});
+/////////////////////////////////////////// MENU BUTTON CLICKS
+
+$("#logout-button").css("cursor", "pointer").click(function(){
+    logout();
+})
+
+////////////////////////////////////////// BUTTON CLICKS 
+//register submit button
+$("#register-button").click(function(){
+    register();
+});
+//login from login page
+$("#login-button").click(function(){
+    newLogin();
+});
+//go to register page from login page
+$("#register-page-button").click(function(){
+    $.mobile.changePage( "#registration-page", { transition: "slide" });
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+

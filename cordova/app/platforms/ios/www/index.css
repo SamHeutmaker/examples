@@ -1,0 +1,231 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    overflow: hidden;
+  }
+
+  ::-webkit-scrollbar { 
+    display: none; 
+    overflow: none;
+}
+
+
+#content-map  {
+	position: absolute;
+	min-height: 100%;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	padding: 0px;
+	margin: 0px;
+
+}
+
+#map-canvas{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+#search-overlay{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #FCFFF5;
+	opacity: 0.7;
+	z-index: 90000;
+	display: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#content-list{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	left: 100%;
+	z-index: 9000000000000;
+	background-color: white;
+}
+#content-panel{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	margin: -16px;
+	background-color: #6E2327;
+	-webkit-box-shadow: inset -12px 0px 56px -17px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset -12px 0px 56px -17px rgba(0,0,0,0.75);
+	box-shadow: inset -12px 0px 56px -17px rgba(0,0,0,0.75);
+	text-shadow: none;
+	text-align: center;
+	font-weight: bold;
+	padding-top: 10px;
+	font-size: 24px;
+	color: black;
+}
+
+#results-container{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+#results-inner{
+	height: 100%;
+	width: 100%;
+	overflow: scroll;
+}
+#list-page-button{
+	position: absolute;
+	width: 35%;
+	left: 55%;
+	height: 40px;
+	top: 200px;
+	z-index: 900000000;
+	display: none;
+
+
+}
+#overlay-close-button{
+	position: absolute;
+	width: 35%;
+	left: 10%;
+	height: 40px;
+	top: 200px;
+	z-index: 900000000;
+	display: none;
+	
+}
+
+.search-overlay-button{
+	z-index: 900000000;
+	display: none;	
+}
+
+#search-input{
+	border-color:#cccccc; 
+	border-style:solid; 
+	box-shadow: 1px 0px 5px 0px rgba(42,42,42,.75);
+	font-weight:normal; 
+	text-shadow:0px 0px 0px rgba(42,42,42,.75);
+	font-size:22px;
+	padding:10px;
+	border-width:1px;
+	border-radius:5px;  
+}
+
+#search-input-container{
+	position: absolute;
+	top: 100px;
+	width: 80%;
+	left: 10%;
+}
+
+
+#panel-open-button{
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	left: 10px;
+	top: 15px;
+	z-index: 50000000;
+	background-image: url(img/icons/list.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#search-button{
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	right: 10px;
+	top: 16px;
+	z-index: 5000000;
+	background-image: url(img/icons/search.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+}
+
+#list-page-back-button{
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	left: 10px;
+	top: 15px;
+	z-index: 5000000;
+	background-image: url(img/icons/arrow-2-left.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+}
+
+.result-listing{
+	position: relative;
+	text-shadow: none;
+	color: black;
+	height: 60px;
+	width: 100%;
+	background-color: white;
+	border-bottom: 1px solid black;
+	font-size: 20px;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	overflow: hidden;
+}
+
+.result-listing-icon{
+	position: relative;
+	top: 10px;
+	left: 10px;
+	height: 40px;
+	width: 40px;
+	float: left;
+
+}
+.result-listing-title{
+	position: relative;
+	left: 30px;
+	top: -10px;
+	float: left;
+}
+
+.result-distance-from{
+	position: relative;
+	right: 100px;
+	top: 30px;
+	font-size: 10px;
+	color: gray;
+	float: left;
+
+}
+
